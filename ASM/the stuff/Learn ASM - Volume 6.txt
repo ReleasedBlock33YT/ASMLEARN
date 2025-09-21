@@ -1,7 +1,7 @@
 Learn ASM - Volume 6
 
 Welcome! If you are here, that means you have completed the course/unit and have made it here.
-Congratualtions! Also, now that you have finished the course, look into the challenges volumes and attempt to complete them.
+Congratulations! Also, now that you have finished the course, look into the challenges volumes and attempt to complete them.
 
 We will begin with the ANSWER KEY.
 
@@ -73,7 +73,7 @@ Volume 4:
 	Answer: A) ret
 
 7) TEST (3):
-	Answer: A) Create a Bubble Sort aglorithim
+	Answer: A) Create a Bubble Sort algorithm
 
 Now we will move on to the Q&A.
 
@@ -92,14 +92,14 @@ A: The difference comes from the size of the CPU registers and memory addresses.
 +==================================================================================================================+
 Q3: How do Assembly programs actually run on the CPU?
 
-A: The CPU executes machine code (binary instuctions). Assembly is a human-readable form of this machine code.
+A: The CPU executes machine code (binary instructions). Assembly is a human-readable form of this machine code.
    An assembler (like NASM) translates ASM code into machine code.
 +==================================================================================================================+
 
 +=======================================================================================================+
 Q4: What is the difference between JMP and CALL?
 
-A: JMP jumps to a location unconditionaly, without remembering where it came from. Meanwhile,
+A: JMP jumps to a location unconditionally, without remembering where it came from. Meanwhile,
 	CALL jumps to a function and pushes the return address on the stack, so RET can bring you back.
 +=======================================================================================================+
 
@@ -121,7 +121,7 @@ A: EAX refers to the contents of the register. Meanwhile, [EAX] treats the value
 Q7: Can Assembly do everything a high-level language can?
 
 A: Yes! But it takes much more work. For example, sorting an array in C is one line ( qsort() ),
-	while in ASM you must write the algorithim yourself.
+	while in ASM you must write the algorithm yourself.
 +===================================================================================================+
 
 +=======================================================================================================+

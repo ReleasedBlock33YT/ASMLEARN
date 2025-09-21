@@ -1,7 +1,7 @@
 Learn ASM - Challenges 1
 
 For each challenge, there will be a .asm file with the challenge name.
-The first challenge you had was in Volume 3. It was to make a Bubble Sort Algorithim in ASM.
+The first challenge you had was in Volume 3. It was to make a Bubble Sort Algorithm in ASM.
 Each challenge will be in the "challenges" folder.
 
 Challenge 2: add_two_numbers
@@ -24,7 +24,7 @@ Challenge 3: number_guess
 		- Use conditional statements (JE, JL, JG) for comparisons
 		- Perform basic I/O with the OS
 		- Store and manipulate values in registers and memory
-		- Create an random number algorithim
+		- Create an random number algorithm
 
 Challenge 4: string_reverser
 	Create an Assembly program that:

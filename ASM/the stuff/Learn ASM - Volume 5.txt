@@ -94,10 +94,10 @@ Next, we will move on to Volume 3 questions.
     C) [arr + 1]
     Your answer: ________
 
-16) You were tasked with creating an algorithim for sorting an array. Which algorithim?
+16) You were tasked with creating an algorithm for sorting an array. Which algorithm?
     A) Bubble Sort ascending
-    B) Calculator algorithim
-    C) Stopwatch algorithim
+    B) Calculator algorithm
+    C) Stopwatch algorithm
     Your answer: ________
 
 Next, we will move on to Volume 4 questions.
@@ -131,7 +131,7 @@ Thank you for downloading this course. You should know a lot about ASM programmi
 Here is the list of mastery for each volume:
 Volume 1 -> Basics
 Volume 2 -> Intermediate
-Volume 3 -> Advanced Inermediate
+Volume 3 -> Advanced Intermediate
 Volume 4 -> Advanced
 Volume 5 -> N/A
 Volume 6 -> N/A

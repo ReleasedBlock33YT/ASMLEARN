@@ -157,7 +157,7 @@ Chapters
 		C) back
 		Your answer: ________
 	Question 7: TEST: In volume 3, what was the challenge?
-		A) Create a Bubble Sort aglorithim
-		B) Create a calculator as an aglorithim
-		C) Create a stopwatch aglorithim
+		A) Create a Bubble Sort algorithm
+		B) Create a calculator as an algorithm
+		C) Create a stopwatch algorithm
 		Your answer: ________

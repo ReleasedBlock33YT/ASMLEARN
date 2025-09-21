@@ -8,7 +8,7 @@
 ###############################################################
 
 This entire project was made by ReleasedBlock33.
-I hope that you can learn alot of Assembly programming just by following this project.
+I hope that you can learn a lot of Assembly programming just by following this project.
 Everything of this project is in the "the stuff" folder. This project includes:
 
     - Challenges

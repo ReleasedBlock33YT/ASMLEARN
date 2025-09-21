@@ -9,7 +9,7 @@ Chapters
 	Show What You Know ............................................................... 143
 
 [11] Chapter 1: Conditional Statements
-	Conditional statements let your program make decisions based on comparisions.
+	Conditional statements let your program make decisions based on comparisons.
 
 	Example: Compare two numbers
 
@@ -142,8 +142,8 @@ Chapters
 
 [143] Chapter 7: Show What You Know
 	Question 1: What does the instruction JL do?
-		A) Jump if last comparision ended up with [first val] < [second val]
-		B) Jump if last comparision ended up with [first val] = [second val]
+		A) Jump if last comparison ended up with [first val] < [second val]
+		B) Jump if last comparison ended up with [first val] = [second val]
 		Your answer: ________
 
 	Question 2: What does the instruction LOOP do?

@@ -30,7 +30,7 @@ Chapters
 	The CPU executes instructions one by one.
 
 [32] Chapter 3: Registers
-	Registers are like CPU's pockets for storing numbers temporaily.
+	Registers are like CPU's pockets for storing numbers temporarily.
 	Some common x86 registers:
 		Register		| Size			| Usage
 		------------------------------------------------------------
@@ -41,7 +41,7 @@ Chapters
 		EAX				| 32-bit		| Extended accumulator
 		EBX				| 32-bit		| Extended base
 		ECX				| 32-bit		| Extended counter
-		EDX				| 32-bit		| Entended data
+		EDX				| 32-bit		| Extended data
 
 	Modern x86 is 32-bit or 64-bit, so you'll see EAX/RAX (32/64-bit versions of AX).
 
