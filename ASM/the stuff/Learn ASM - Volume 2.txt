@@ -1,0 +1,175 @@
+Learn ASM - Volume 2
+Chapters
+	Conditional Statements ........................................................... 11
+	Loops ............................................................................ 43
+	Stack Basics ..................................................................... 57
+	Functions / Procedures ........................................................... 77
+	Arrays and Strings ............................................................... 94
+	Simple Programs .................................................................. 117
+	Show What You Know ............................................................... 143
+
+[11] Chapter 1: Conditional Statements
+	Conditional statements let your program make decisions based on comparisions.
+
+	Example: Compare two numbers
+
+		mov eax, 5
+		mov ebx, 10
+		cmp eax, ebx        ; Compare EAX and EBX
+		je equal_label      ; Jump if equal
+		jl less_label       ; Jump if less than
+		jg greater_label    ; Jump if greater than
+
+		equal_label:
+			; Code if EAX == EBX
+			jmp end_cmp
+
+		less_label:
+			; Code if EAX < EBX
+			jmp end_cmp
+
+		greater_label:
+			; Code if EAX > EBX
+			
+		end_cmp:
+			; Continue program
+
+	Notes:
+		- JE / JZ -> Jump if equal / zero
+		- JNE / JNZ -> Jump if NOT equal / NOT zero
+		- JL / JB -> Jump if less / below
+		- JG / JA -> Jump if greater / above
+
+[43] Chapter 2: Loops
+	Loops allow repeating instructions multiple times.
+	Example: Count from 1 to 5 using ECX
+
+		mov ecx, 5          ; Loop counter
+
+		loop_start:
+			; Do something here
+			loop loop_start         ; Decrement ECX and jump to loop_start
+
+	Notes:
+		- LOOP automatically decrements CX / ECX / RCX and jumps if not zero
+		- You can also use JMP with conditional jumps for custom loops.
+
+[57] Chapter 3: Stack Basics
+	The stack is a special memory area used for temporary storage.
+
+	Instructions:
+		- PUSH reg -> Push register value onto the stack
+		- POP reg -> Pop value from the stack into a register
+	Example:
+
+		mov eax, 5
+		push eax        ; Save EAX on stack
+		mov eax, 0
+		pop eax         ; Restore EAX from stack
+
+	CALL and RET for functions:
+
+		call my_function
+		; Execution jumps to my_function
+		ret
+		; Returns to the next instruction after call
+
+[77] Chapter 4: Functions / Procedures
+	Functions let you reuse code in ASM.
+
+	Example:
+
+		call add_numbers
+		jmp end_program
+
+		add_numbers:
+			mov eax, 5
+			add eax, 10
+			ret
+
+	Notes:
+		- Arguments can be passed via stack or registers
+		- Return values usually go into EAX (32-bit) or RAX (64-bit).
+
+[94] Chapter 5: Arrays and Strings
+	You can store multiple values in memory as arrays
+
+	Example: Sum elements of an array
+
+		section .data
+			arr db 1,2,3,4,5
+			sum db 0
+
+		section .text
+			mov al, 0               ; sum
+			mov bl, 0               ; index
+
+		loop_array:
+			add al, [arr + bl]
+			inc bl
+			cmp bl, 5
+			jl loop_array
+
+	Notes:
+		- Strings are arrays of bytes ending with 0 (null-terminated).
+		- Access elements with offsets: [array + index].
+
+[117] Chapter 6: Simple Programs
+	Example 1: Calculator (Add two numbers)
+
+		mov eax, 5
+		mov ebx, 7
+		add eax, ebx
+		; EAX = 12
+
+	Example 2: Sum elements in an Array, then add a number to the final value
+
+		section .data
+			arr db 1,2,3,5,8
+			sum db 0
+
+		section .text
+			mov al, 0
+			mov ah, 10
+			mov bl, 0
+
+		loop_array:
+			add al, [arr + bl]
+			inc bl
+			cmp bl, 5
+			jl loop_array
+			add al, ah          ; AL = AL + AH
+
+[143] Chapter 7: Show What You Know
+	Question 1: What does the instruction JL do?
+		A) Jump if last comparision ended up with [first val] < [second val]
+		B) Jump if last comparision ended up with [first val] = [second val]
+		Your answer: ________
+
+	Question 2: What does the instruction LOOP do?
+		A) decrements CX / ECX / RCX and jumps if not zero
+		B) decrements CX / ECX / RCX and does a conditional jump
+		Your answer: ________
+
+	Question 3: What is the instruction to put a register onto the stack?
+		A) PUSH reg
+		B) PLACE reg
+		C) ADDSTACK reg
+		D) ASTACK reg
+		Your answer: ________
+
+	Question 4: How do you go to a function, which has a RET instruction at the end?
+		A) CALL func
+		B) GOTO func
+		C) JMP func
+		Your answer: ________
+
+	Question 5: How do you define an array?
+		A) [array_name] db [values + commas between values]
+		B) [array_name] ar [values + commas between values]
+		Your answer: ________
+
+	Question 6: What are STRINGS?
+		A) Null-terminated, array of bytes (characters)
+		B) array of bytes, but uses [""] instead of numbers/other values
+		Your answer: ________

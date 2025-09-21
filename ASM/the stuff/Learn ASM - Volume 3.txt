@@ -1,0 +1,123 @@
+Learn ASM - Volume 3
+Chapters
+	Macros and Constants ..................................................... 10
+	File I/O Basics .......................................................... 33
+	Advanced Loops and Conditional Logic ..................................... 65
+	Simple Algorithms ........................................................ 81
+	Mini Projects ............................................................ 100
+	Show What You Know ....................................................... 110
+
+Chapter 1: Macros and Constants
+	Macros can constants let you reuse code and define fixed values
+
+	Example: Using a constant
+
+		PI equ 3.14             ; Define constant PI
+
+		mov eax, 10
+		mul PI                  ; Multiply EAX by PI
+
+	Example: Using a macro
+
+		%macro SQUARE 1
+			mov eax, %1
+			imul eax, eax
+		%endmacro
+
+		SQUARE 5                ; Result in EAX = 25
+
+	Notes:
+		- equ -> defines a constant value
+		- %macro -> defines a reusable code snippet
+
+Chapter 2: File I/O Basics
+	ASM can interact with files using OS syscalls.
+
+	Example Write a string to a file (Linux 64-bit)
+
+		section .data
+			msg db "Hello, file!", 0
+
+		section .text
+			global _start
+
+		_start:
+			mov rax, 2          ; sys_open
+			mov rdi, filename   ; file path
+			mov rsi, 588        ; O_CREAT | O_WRONLY
+			mov rdx, 0644       ; permissions
+			syscall
+
+			mov rdi, rax		; file descriptor
+			mov rax, 1			; sys_write
+			mov rsi, msg		; string
+			mov rdx, 12			; length
+			syscall
+
+			mov rax, 60			; sys_exit
+			xor rdi, rdi
+			syscall
+
+	Notes:
+		- File operations are OS-specific
+		- You need to handle file descriptors carefully
+
+Chapter 3: Advanced Loops and Conditional Logic
+	You can combine loops and conditional jumps for more complex programs.
+
+	Example: Print numbers 1 to 10, but skip 5
+		
+		mov ecx, 1
+
+		loop_start:
+			cmp ecx, 5
+			je skip
+			; Print ecx here
+		skip:
+			inc ecx
+			cmp ecx 11
+			jl loop_start
+
+Chapter 4: Simple Algorithms
+	Example: Sum of array elements
+
+		mov al, 0
+		mov bl, 0
+
+		loop_array:
+			add al, [arr + bl]
+			inc bl
+			cmp bl, n
+			jl loop_array
+
+	Notes:
+		- You can implement math, search, and basic algorithms entirely in ASM
+		- All memory access is done manually via offsets
+
+	Challenge:
+		Create an algorithm for sorting an array but it has to use Bubble Sort (ascending) for a small array.
+
+Chapter 5: Mini Projects
+	1. Calculator
+	2. Number Guessing Game
+	3. String Reverser
+
+	Tips:
+		- Start with small programs
+		- Print values to console using OS syscalls
+		- Keep track of registers and memory
+
+Chapter 6: Show What You Know
+	Question 1: How do you define a constant?
+		A) [constant_name] equ [constant_value]
+		B) [constant_name] is [constant_value]
+		Your answer: ________
+	Question 2: How do you define a macro?
+		A) %macro + %endmacro
+		B) macro + endmacro
+		Your answer: ________
+	Question 3: How do you access the 3rd element of an array?
+		A) [arr + 2]
+		B) [arr + 3]
+		C) [arr + 1]
+		Your answer: ________

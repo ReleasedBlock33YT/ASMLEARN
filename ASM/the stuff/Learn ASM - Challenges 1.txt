@@ -1,0 +1,49 @@
+Learn ASM - Challenges 1
+
+For each challenge, there will be a .asm file with the challenge name.
+The first challenge you had was in Volume 3. It was to make a Bubble Sort Algorithim in ASM.
+Each challenge will be in the "challenges" folder.
+
+Challenge 2: add_two_numbers
+	Create an Assembly program that:
+		- Reads 2 numbers from the user
+		- Adds them together
+		- Prints the result to the screen
+	This challenge shows that you can:
+		- Use I/O in system calls
+		- Using registers for math
+		- Handling user interaction
+
+Challenge 3: number_guess
+	Create an Assembly program that:
+		- Generates a number between 1-10.
+		- Ask the user to guess the number.
+		- Give feedback to the user.
+	This challenge shows that you can:
+		- Use loops for repeated input
+		- Use conditional statements (JE, JL, JG) for comparisons
+		- Perform basic I/O with the OS
+		- Store and manipulate values in registers and memory
+		- Create an random number algorithim
+
+Challenge 4: string_reverser
+	Create an Assembly program that:
+		- Reads a string from the user.
+		- Reverses the string in memory.
+		- Prints the reversed string to the screen.
+	This challenge shows that you can:
+		- Work with arrays of bytes (strings)
+		- Use loops to iterate through memory
+		- Manipulate memory addresses with pointers
+		- Perform I/O using system calls
+
+Challenge 5: simple_calculator
+	Create an Assembly program that:
+		- Reads two numbers and an operator (+, -, *, /) from the user.
+		- Performs the calculation.
+		- Prints the result to the screen.
+	This challenge shows that you can:
+		- Handle user input and conditional branching
+		- Perform arithmetic operations using registers
+		- Combine multiple concepts: I/O, math, and decision-making
+		- Build a small, interactive program entirely in ASM

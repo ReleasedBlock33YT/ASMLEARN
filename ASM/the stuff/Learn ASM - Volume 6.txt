@@ -1,0 +1,146 @@
+Learn ASM - Volume 6
+
+Welcome! If you are here, that means you have completed the course/unit and have made it here.
+Congratualtions! Also, now that you have finished the course, look into the challenges volumes and attempt to complete them.
+
+We will begin with the ANSWER KEY.
+
+Volume 1:
+1) What type of programming language is ASM?
+	Answer: B) Low-level programming
+
+2) What is AX?
+	Answer: A) A register
+
+3) Is EAX a 32-bit register or a 16-bit register?
+	Answer: B) 32-bit
+
+4) What does the JMP instruction do?
+	Answer: A) Jump to another part in the code
+
+5) How do you COMPILE an ASM program for Linux 64-bit?
+	Answer: A) nasm -f elf64 [filename].asm -o [filename].o
+
+6) What does buffer resb 10 do?
+	Answer: D) reserve 10 BYTES
+
+Volume 2:
+1) What does the instruction JL do?
+	Answer: A) Jump if last comparison ended up with [first val] < [second val]
+
+2) What does the instruction LOOP do?
+	Answer: A) decrements CX / ECX / RCX and jumps if not zero
+
+3) What is the instruction to put a register onto the stack?
+	Answer: A) PUSH reg
+
+4) How do you go to a function, which has a RET instruction at the end?
+	Answer: A) CALL func
+
+5) How do you define an array?
+	Answer: A) [array_name] db [values + commas]
+
+6) What are STRINGS?
+	Answer: A) Null-terminated, array of bytes (characters)
+
+Volume 3:
+1) How do you define a constant?
+	Answer: A) [constant_name] equ [constant_value]
+
+2) How do you define a macro?
+	Answer: A) %macro + %endmacro
+
+3) How do you access the 3rd element of an array?
+	Answer: A) [arr + 2]
+
+Volume 4:
+1) What does XOR do to a register?
+	Answer: B) Toggles bits
+
+2) How do you pass multiple arguments to a function via stack?
+	Answer: A) Push them in reverse order
+
+3) Which FPU instruction adds to floating point numbers?
+	Answer: B) fadd
+
+4) Which segment register is used for stack operations?
+	Answer: B) SS
+
+5) TEST (1):
+	Answer: A) Low-Level programming
+
+6) TEST (2):
+	Answer: A) ret
+
+7) TEST (3):
+	Answer: A) Create a Bubble Sort aglorithim
+
+Now we will move on to the Q&A.
+
++=================================================================================+
+Q1: Why should I learn Assembly when high-level languages are easier?
+
+A: Assembly teaches you how the computer really works at the hardware level. 
++=================================================================================+
+
++=================================================================================+
+Q2: What is the difference between 16-bit, 32-bit, and 64-bit Assembly?
+
+A: The difference comes from the size of the CPU registers and memory addresses.
++=================================================================================+
+
++==================================================================================================================+
+Q3: How do Assembly programs actually run on the CPU?
+
+A: The CPU executes machine code (binary instuctions). Assembly is a human-readable form of this machine code.
+   An assembler (like NASM) translates ASM code into machine code.
++==================================================================================================================+
+
++=======================================================================================================+
+Q4: What is the difference between JMP and CALL?
+
+A: JMP jumps to a location unconditionaly, without remembering where it came from. Meanwhile,
+	CALL jumps to a function and pushes the return address on the stack, so RET can bring you back.
++=======================================================================================================+
+
++=====================================================================================================+
+Q5: Why is PUSH and POP important?
+
+A: They let you save and restore data on the stack. This is critical for passing function arguments,
+	preserving register values, and managing nested function calls.
++=====================================================================================================+
+
++====================================================================================================================+
+Q6: What's the difference between EAX and [EAX]?
+
+A: EAX refers to the contents of the register. Meanwhile, [EAX] treats the value inside EAX as a memory address,
+	and accesses the value stored at that memory location.
++====================================================================================================================+
+
++===================================================================================================+
+Q7: Can Assembly do everything a high-level language can?
+
+A: Yes! But it takes much more work. For example, sorting an array in C is one line ( qsort() ),
+	while in ASM you must write the algorithim yourself.
++===================================================================================================+
+
++=======================================================================================================+
+Q8: How are strings handled in Assembly?
+
+A: Strings are arrays of bytes. Most often they're null-terminated (0x00 at the end). To process them,
+	you move byte-by-byte until you find the null terminator.
++=======================================================================================================+
+
++=========================================================================================+
+Q9: What's the difference between int 0x80 and syscall?
+
+A: int 0x80 is the old Linux way (for 32-bit systems) of calling the kernel. Meanwhile,
+	syscall is the new 64-bit instruction to request kernel services.
++=========================================================================================+
+
++=================================================================================+
+Q10: Is Assembly still used today?
+
+A: Absolutely. It's used in embedded systems, firmware, OSes, security research,
+	reverse engineering, and performance-critical applications.
++=================================================================================+

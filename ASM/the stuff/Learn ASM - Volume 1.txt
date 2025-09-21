@@ -1,0 +1,167 @@
+Learn ASM - Volume 1
+Chapters
+	What is Assembly Language? ..................................................................... 12
+	How Assembly Works ............................................................................. 20
+	Registers ...................................................................................... 32
+	Basic Instructions ............................................................................. 48
+	Writing Your First Program (Hello World) ....................................................... 65
+	Memory and Data ................................................................................ 97
+	Simple Math Example ............................................................................ 113
+	Show what you know ............................................................................. 125
+
+[12] Chapter 1: What is Assembly Language?
+	Assembly language is low-level programming, very close to the computer's hardware.
+	Unlike C or Python, ASM talks directly to the CPU using instructions. Each CPU architecture (x86, ARM, MIPS)
+	has its own instruction set.
+		-	High-level languages -> abstract, easy to read/write (Python, C)
+		-	Assembly -> hardware-oriented, fast, precise, but harder to read/write
+	Think of it as giving step-by-step instructions to the CPU.
+
+[20] Chapter 2: How Assembly Works
+	Every program in ASM consists of instructions that the CPU executes:
+
+		MOV AX, 5			; Move the value of 5 into the AX register
+		ADD AX, 3			; Add 3 to the AX register
+	
+	Here:
+		- MOV and ADD are instructions
+		- AX is a register, a tiny, super-fast storage in the CPU
+		- 5 and 3 are immediate values (numbers directly in the code).
+	The CPU executes instructions one by one.
+
+[32] Chapter 3: Registers
+	Registers are like CPU's pockets for storing numbers temporaily.
+	Some common x86 registers:
+		Register		| Size			| Usage
+		------------------------------------------------------------
+		AX				| 16-bit		| Accumulator
+		BX				| 16-bit		| Base register
+		CX				| 16-bit		| Counter (loops)
+		DX				| 16-bit		| Data register, I/O
+		EAX				| 32-bit		| Extended accumulator
+		EBX				| 32-bit		| Extended base
+		ECX				| 32-bit		| Extended counter
+		EDX				| 32-bit		| Entended data
+
+	Modern x86 is 32-bit or 64-bit, so you'll see EAX/RAX (32/64-bit versions of AX).
+
+[48] Chapter 4: Basic Instructions
+	In Assembly Language, there are many instructions that tell the CPU what to do.
+	This is a list of basic instructions in Assembly Language:
+		Instruction				| What it does
+		---------------------------------------------------------------
+		MOV						| Copy a value to a register
+		ADD						| Add two numbers
+		SUB						| Subtract two numbers
+		MUL						| Multiply
+		DIV						| Divide
+		INC						| Increment by 1
+		DEC						| Decrement by 1
+		CMP						| Compare 2 values
+		JMP						| Jump to another part of the program
+		JE / JZ					| Jump if equal (JE) / zero (JZ)
+		JNE / JNZ				| Jump if NOT equal (JNE) / NOT zero (JNZ)
+
+[65] Chapter 5: Writing Your First Program (Hello World)
+	In Assembly Language, printing text is OS-specific.
+	Let's do a Linux 64-bit example using NASM:
+
+		section .data
+			msg db "Hello, ASM!", 0			; Our string
+
+		section .text
+			global _start
+
+		_start:
+			mov rax, 1						; sys_write
+			mov rdi, 1						; stdout
+			mov rsi, msg					; address of string
+			mov rdx, 11						; length of the string
+			syscall							; call the OS
+
+			mov rax, 60						; sys_exit
+			xor rdi, rdi					; exit code 0
+			syscall
+
+	Save the above code as hello.asm
+	Steps to run the above code on Linux:
+
+		nasm -f elf64 hello.asm -o hello.o
+		ld hello.o -o hello
+		./hello
+
+	You should see:
+
+		Hello, ASM!
+
+[97] Chapter 6: Memory and Data
+	ASM lets you store values in memory, not just registers:
+
+		section .data
+			num db 10			; 1 byte
+			arr db 1,2,3		; array of bytes
+
+		section .bss
+			buffer resb 10		; reserve 10 bytes
+
+	The following code above means:
+		- db = define BYTE
+		- dw = define WORD (2 BYTES)
+		- dd = define DOUBLE WORD (4 BYTES / 2 WORDS)
+		- resb = reserve BYTES
+
+[113] Chapter 7: Simple Math Example
+
+		section .text
+			global _start
+
+		_start:
+			mov eax, 5
+			add eax, 10			; EAX = 15
+			sub eax, 3			; EAX = 12
+
+	Registers are updated step by step. You can't directly print EAX without calling OS routines.
+
+[125] Chapter 8: Show what you know
+	At the end of each "Volume" of this Unit, there will be a "Show what you know" chapter.
+	These chapters show you how much you have learned Assembly Language.
+
+	Question 1: What type of programming language is ASM?
+		A) High-level programming
+		B) Low-level programming
+		Your answer: ________
+
+	Question 2: What is AX?
+		A) A register
+		B) A instruction
+		C) A location in memory
+		Your answer: ________
+
+	Question 3: Is EAX a 32-bit register or a 16-bit register?
+		A) 16-bit
+		B) 32-bit
+		Your answer: ________
+
+	Question 4: What does the JMP instruction do?
+		A) Jump to another part in the code
+		B) Add two numbers
+		C) Compare two values
+		D) Divide
+		Your answer: ________
+
+	Question 5: How do you COMPILE an ASM program for Linux 64-bit? (replace [filename] with the name of your ASM program)
+		A) nasm -f elf64 [filename].asm -o [filename].o
+		B) nasm -f bin [filename].asm -o [filename].bin
+		Your answer: ________
+
+	Question 6: What does the following code do?
+		CODE:
+
+			buffer resb 10
+		
+		ANSWERS:
+		A) define 10 BYTES
+		B) define 10 WORDS
+		C) define 10 DOUBLE WORDS
+		D) reserve 10 BYTES
+		Your answer: ________

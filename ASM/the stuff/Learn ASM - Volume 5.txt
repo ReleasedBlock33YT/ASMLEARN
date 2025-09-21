@@ -1,0 +1,137 @@
+Learn ASM - Volume 5
+
+Welcome to the final volume of Learn ASM!
+In this volume, you will be answering a lot of questions to show what you know.
+The answer key for all questions is in Volume 6, along with Q&A questions.
+
+Lets begin with Volume 1 questions.
+
+1) What type of programming language is ASM?
+    A) High-level programming
+    B) Low-level programming
+    Your answer: ________
+
+2) What is AX?
+    A) A register
+    B) An instruction
+    C) A location in memory
+    Your answer: ________
+
+3) Is EAX a 32-bit register or a 16-bit register?
+    A) 16-bit
+    B) 32-bit
+    Your answer: ________
+
+4) What does the JMP instruction do?
+    A) Jump to another part in the code
+    B) Add two numbers
+    C) Compare two numbers
+    D) Divide
+    Your answer: ________
+
+5) How do you COMPILE an ASM program for Linux 64-bit? ( Replace [filename] with the filename of your file)
+    A) nasm -f elf64 [filename].asm -o [filename].o
+    B) nasm -f bin [filename].asm -o [filename].bin
+    Your answer: ________
+
+6) What does buffer resb 10 do?
+    A) define 10 BYTES
+    B) define 10 WORDS
+    C) define 10 DOUBLE WORDS
+    D) reserve 10 BYTES
+    Your answer: ________
+
+Next, we will move on to Volume 2 questions.
+
+7) What does the instruction JL do?
+    A) Jump if last comparison ended up with [first val] < [second val]
+    B) Jump if last comparison ended up with [first val] = [second val]
+    Your answer: ________
+
+8) What does the instruction LOOP do?
+    A) decrements CX / ECX / RCX and jumps if not zero
+    B) decrements CX / ECX / RCX and does a conditional jump
+    Your answer: ________
+
+9) What is the instruction to put a register onto the stack?
+    A) PUSH reg
+    B) PLACE reg
+    C) ADDSTACK reg
+    D) ASTACK reg
+    Your answer: ________
+
+10) How do you go to a function, which has a RET instruction at the end?
+    A) CALL func
+    B) GOTO func
+    C) JMP func
+    Your answer: ________
+
+11) How do you define an array?
+    A) [array_name] db [values + commas]
+    B) [array_name] ar [values + commas]
+    Your answer: ________
+
+12) What are STRINGS in ASM?
+    A) Null-terminated, array of bytes (characters)
+    B) Array of byes, but uses [""] instead of numbers
+    Your answer: ________
+
+Next, we will move on to Volume 3 questions.
+
+13) How do you define a constant?
+    A) [constant_name] equ [constant_value]
+    B) [constant_name] is [constant_value]
+    Your answer: ________
+
+14) How do you define a macro?
+    A) %macro + %endmacro
+    B) macro + endmacro
+    Your answer: ________
+
+15) How do you access the 3rd element of an array?
+    A) [arr + 2]
+    B) [arr + 3]
+    C) [arr + 1]
+    Your answer: ________
+
+16) You were tasked with creating an algorithim for sorting an array. Which algorithim?
+    A) Bubble Sort ascending
+    B) Calculator algorithim
+    C) Stopwatch algorithim
+    Your answer: ________
+
+Next, we will move on to Volume 4 questions.
+
+17) What does XOR do to a register?
+    A) Clears it
+    B) Toggles bits
+    C) Sets it to 1
+    Your answer: ________
+
+18) How do you pass multiple arguments to a function via stack?
+    A) Push them in reverse order
+    B) Push them in forward order
+    C) Store in registers only
+    Your answer: ________
+
+19) Which FPU instruction adds to floating point numbers?
+    A) fmul
+    B) fadd
+    C) fsub
+    Your answer: ________
+
+20) Which segment register is used for stack operations?
+    A) DS
+    B) SS
+    C) ES
+    Your answer: ________
+
+That is all of the questions. Once again, Q&A + Answer key is in Volume 6.
+Thank you for downloading this course. You should know a lot about ASM programming.
+Here is the list of mastery for each volume:
+Volume 1 -> Basics
+Volume 2 -> Intermediate
+Volume 3 -> Advanced Inermediate
+Volume 4 -> Advanced
+Volume 5 -> N/A
+Volume 6 -> N/A
